@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Home page</h1>
+
+
+    {% if request.user.is_authenticated %}
+
+        <h1>Hello {{ request.user.username }}</h1>
+        <br>
+
+        <form method="post">
+            {% csrf_token %}
+            <span>From</span>
+            <input type="number" name="from">
+            <span>to</span>
+            <input type="number" name="to">
+            <button type="submit">submit</button>
+        </form>
+
+
+        {% for course in courses %}
+            <h3>{{ course.name }}</h3>
+        {% endfor %}
+
+    {% endif %}
+
+
+{% endblock %}
