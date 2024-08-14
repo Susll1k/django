@@ -7,7 +7,7 @@
 
     {% if request.user.is_authenticated %}
 
-        <h1>Hello {{ request.user.username }}</h1>
+        <h2>Hello {{ request.user.username }}</h2>
         <br>
 
         <form method="post">
@@ -21,8 +21,10 @@
 
 
         {% for course in courses %}
-            <h3>{{ course.name }}</h3>
+            <h3>{{ course.name }} - {{ course.price }}</h3>
         {% endfor %}
+    {% else %}
+     <h2>Hello! Login to your account.</h2>
 
     {% endif %}
 
