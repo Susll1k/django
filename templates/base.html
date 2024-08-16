@@ -23,6 +23,7 @@
             {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
             <li><a href="{% url 'signup' %}">Sign up</a></li>
+            <li><a href="{% url 'social:begin' 'google-oauth2' %}">Google+</a></li>
             {% endif %}
         </ul>
     </nav>
